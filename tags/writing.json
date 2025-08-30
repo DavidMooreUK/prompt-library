@@ -1,0 +1,8 @@
+{
+  "name": "Writing",
+  "description": "Prompts for content creation, copywriting, and written communication",
+  "prompts": [
+    "writing-blog-outline"
+  ],
+  "related_tags": ["content", "blogging", "copywriting", "documentation"]
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Library</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 18px; }
+        .search-box { width: 100%; max-width: 500px; margin: 0 auto 30px; padding: 12px; 
+                     border: 2px solid #ddd; border-radius: 8px; font-size: 16px; }
+        .search-box:focus { outline: none; border-color: #3498db; }
+        .filters { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
+        .filter-btn { padding: 8px 16px; border: 1px solid #ddd; border-radius: 20px; 
+                     background: white; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: #3498db; color: white; border-color: #3498db; }
+        .prompt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .prompt-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: white;
+                      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .prompt-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .prompt-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #2c3e50; }
+        .prompt-description { color: #666; margin-bottom: 15px; }
+        .prompt-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .category { background: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        .tags { display: flex; gap: 5px; flex-wrap: wrap; }
+        .tag { background: #ecf0f1; color: #555; padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+        .variables { margin-top: 10px; font-size: 12px; color: #888; }
+        .copy-btn { width: 100%; padding: 10px; background: #3498db; color: white; border: none;
+                   border-radius: 4px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+        .copy-btn:hover { background: #2980b9; }
+        .loading { text-align: center; color: #666; font-size: 18px; margin: 40px 0; }
+        .error { text-align: center; color: #e74c3c; margin: 40px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Prompt Library</h1>
+            <p class="subtitle">Curated collection of AI prompts for productivity and creativity</p>
+        </header>
+
+        <input type="text" id="searchInput" class="search-box" placeholder="Search prompts...">
+        
+        <div id="filters" class="filters"></div>
+        
+        <div id="promptContainer" class="prompt-grid">
+            <div class="loading">Loading prompts...</div>
+        </div>
+    </div>
+
+    <script>
+        const PROMPTS_URL = 'https://raw.githubusercontent.com/DavidMooreUK/prompt-library/main/prompts.json';
+        let allPrompts = [];
+        let allCategories = new Set();
+
+        async function loadPrompts() {
+            try {
+                const response = await fetch(PROMPTS_URL);
+                const data = await response.json();
+                allPrompts = data.prompts;
+                
+                allPrompts.forEach(prompt => allCategories.add(prompt.category));
+                
+                renderFilters();
+                renderPrompts(allPrompts);
+            } catch (error) {
+                document.getElementById('promptContainer').innerHTML = 
+                    `<div class="error">Failed to load prompts: ${error.message}</div>`;
+            }
+        }
+
+        function renderFilters() {
+            const filtersContainer = document.getElementById('filters');
+            const allBtn = document.createElement('button');
+            allBtn.className = 'filter-btn active';
+            allBtn.textContent = 'All';
+            allBtn.onclick = () => filterByCategory('all', allBtn);
+            filtersContainer.appendChild(allBtn);
+
+            Array.from(allCategories).sort().forEach(category => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                btn.onclick = () => filterByCategory(category, btn);
+                filtersContainer.appendChild(btn);
+            });
+        }
+
+        function filterByCategory(category, activeBtn) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            activeBtn.classList.add('active');
+            
+            const filtered = category === 'all' ? allPrompts : allPrompts.filter(p => p.category === category);
+            renderPrompts(filtered);
+        }
+
+        function renderPrompts(prompts) {
+            const container = document.getElementById('promptContainer');
+            
+            if (prompts.length === 0) {
+                container.innerHTML = '<div class="loading">No prompts found matching your search.</div>';
+                return;
+            }
+
+            container.innerHTML = prompts.map(prompt => `
+                <div class="prompt-card">
+                    <div class="prompt-title">${prompt.title}</div>
+                    <div class="prompt-description">${prompt.description}</div>
+                    <div class="prompt-meta">
+                        <div class="category">${prompt.category}</div>
+                        <div class="tags">
+                            ${prompt.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    ${prompt.variables ? `<div class="variables">Variables: ${prompt.variables.map(v => `{${v}}`).join(', ')}</div>` : ''}
+                    <button class="copy-btn" onclick="copyPrompt('${prompt.id}')">Copy Prompt</button>
+                </div>
+            `).join('');
+        }
+
+        async function copyPrompt(promptId) {
+            const prompt = allPrompts.find(p => p.id === promptId);
+            if (prompt) {
+                try {
+                    await navigator.clipboard.writeText(prompt.prompt);
+                    const btn = event.target;
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.style.background = '#27ae60';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '#3498db';
+                    }, 1500);
+                } catch (err) {
+                    alert('Failed to copy prompt. Please try again.');
+                }
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = allPrompts.filter(prompt =>
+                prompt.title.toLowerCase().includes(query) ||
+                prompt.description.toLowerCase().includes(query) ||
+                prompt.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                prompt.category.toLowerCase().includes(query)
+            );
+            renderPrompts(filtered);
+        });
+
+        loadPrompts();
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "prompt-library-raycast",
+  "title": "Prompt Library",
+  "description": "Access your personal prompt library directly from Raycast",
+  "icon": "📚",
+  "author": "David Moore",
+  "license": "UNLICENSED",
+  "commands": [
+    {
+      "name": "search-prompts",
+      "title": "Search Prompts",
+      "description": "Search and use prompts from your library",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.0.0",
+    "@raycast/utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-08-30T00:00:00Z",
+  "prompts": [
+    {
+      "id": "writing-blog-outline",
+      "title": "Blog Post Outline Generator",
+      "description": "Creates structured outlines for blog posts with engaging headlines and logical flow",
+      "tags": ["writing", "content", "blogging"],
+      "category": "writing",
+      "prompt": "You are an expert content strategist and writer. Create a comprehensive blog post outline for the topic: {topic}\n\nStructure your outline with:\n1. Compelling headline options (3-5 variations)\n2. Hook/opening that grabs attention\n3. Main sections with subpoints\n4. Key takeaways/conclusion\n5. Call-to-action suggestions\n\nMake it engaging, logical, and optimized for reader retention.",
+      "variables": ["topic"],
+      "example_usage": "Topic: 'How AI is transforming customer service'"
+    },
+    {
+      "id": "tpm-amazon-behavioral",
+      "title": "Amazon Leadership Principles Interview Prep",
+      "description": "Helps prepare STAR method responses for Amazon's 16 leadership principles",
+      "tags": ["interview", "tpm", "amazon", "behavioral"],
+      "category": "career",
+      "prompt": "You are an expert Amazon interview coach. Help me prepare a STAR (Situation, Task, Action, Result) response for the Amazon leadership principle: {principle}\n\nMy background: {background}\nSpecific experience/project: {experience}\n\nProvide:\n1. Key aspects of this leadership principle Amazon values\n2. STAR framework guidance for this principle\n3. Sample strong response structure\n4. Common pitfalls to avoid\n5. Follow-up questions they might ask",
+      "variables": ["principle", "background", "experience"],
+      "example_usage": "Principle: 'Customer Obsession', Background: 'Product Manager at SaaS company', Experience: 'Led user research initiative'"
+    },
+    {
+      "id": "research-lit-review",
+      "title": "Academic Literature Review Generator",
+      "description": "Structures comprehensive literature reviews for academic research",
+      "tags": ["research", "academic", "literature", "analysis"],
+      "category": "research",
+      "prompt": "You are an expert academic researcher. Help me create a literature review structure for: {research_topic}\n\nResearch focus: {focus_area}\nDiscipline: {discipline}\n\nProvide:\n1. Key themes and sub-topics to cover\n2. Methodological approaches to review\n3. Critical analysis framework\n4. Gap identification strategy\n5. Synthesis and conclusion structure\n6. Recommended search terms and databases",
+      "variables": ["research_topic", "focus_area", "discipline"],
+      "example_usage": "Topic: 'Machine learning in healthcare diagnostics', Focus: 'Image recognition accuracy', Discipline: 'Computer Science'"
+    }
+  ]
+}

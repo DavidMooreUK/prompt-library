@@ -1,0 +1,8 @@
+{
+  "name": "Career",
+  "description": "Prompts for job interviews, career development, and professional growth",
+  "prompts": [
+    "tpm-amazon-behavioral"
+  ],
+  "related_tags": ["interview", "tpm", "amazon", "behavioral", "leadership"]
+}

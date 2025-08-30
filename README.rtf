@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;\f2\fmodern\fcharset0 Courier;
+\f3\froman\fcharset0 Times-Italic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid102\'01\'01;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid202\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Yes. 
+\f1\b Answer:
+\f0\b0 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Why a Public GitHub Repo is Simplest\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Raw file access
+\f0\b0  \'96 Public repos let you fetch 
+\f2\fs26 prompts.json
+\f0\fs24  directly via a raw URL (
+\f2\fs26 https://raw.githubusercontent.com/...
+\f0\fs24 ) without authentication or tokens.\
+\ls1\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Zero setup across environments
+\f0\b0  \'96 Works instantly in Raycast, ChatGPT (via bookmarklet), and Copilot without needing secrets or proxies.\
+\ls1\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Easy sharing / reuse
+\f0\b0  \'96 You can open-source your library later, or fork into private copies if needed.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 When You Might Keep It Private\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls2\ilvl0
+\f0\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If prompts are 
+\f3\i sensitive
+\f0\i0  (contain proprietary Shell/IP, EB-1A legal strategy, etc.), then you should avoid public.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A private repo requires either:\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sa240\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A 
+\f1\b GitHub token
+\f0\b0  stored in Raycast/extension environment variables and in your browser script (messier).\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Or a 
+\f1\b mirror
+\f0\b0 : use GitHub Actions to publish 
+\f2\fs26 prompts.json
+\f0\fs24  nightly to a secure blob (Azure Blob, AWS S3, or GitHub Pages behind auth).\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Practical Trade-off\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls3\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Public repo
+\f0\b0  = easiest and fastest.\
+\ls3\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Private repo
+\f0\b0  = secure, but adds complexity (tokens, hosting, proxy).\
+\ls3\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Hybrid
+\f0\b0  = split into two repos:\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sa240\partightenfactor0
+\ls3\ilvl1
+\f3\i \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Public
+\f0\i0  for generic productivity prompts (blog outlines, SEO, interview prep).\
+\ls3\ilvl1
+\f3\i \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Private
+\f0\i0  for prompts with sensitive info (Shell systems, EB-1 strategy).\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Recommendation: Start with a 
+\f1\b public GitHub repo
+\f0\b0  for generic prompts to test the flow in Raycast and browser.\uc0\u8232 Next step: Decide whether you need a 
+\f1\b second private repo
+\f0\b0  for sensitive prompts, or sanitize them for the public one.\
+\
+REPO Layout\
+\
+prompt-library/\
+\uc0\u9500 \u9472  README.md\
+\uc0\u9500 \u9472  LICENSE\
+\uc0\u9500 \u9472  prompts.json                 # machine-readable index used by all clients\
+\uc0\u9500 \u9472  schema.json                  # optional JSON Schema for validation\
+\uc0\u9500 \u9472  prompts/                     # human-readable prompt pages (rich notes)\
+\uc0\u9474   \u9500 \u9472  writing-blog-outline.md\
+\uc0\u9474   \u9500 \u9472  tpm-amazon-behavioral.md\
+\uc0\u9474   \u9492 \u9472  research-lit-review.md\
+\uc0\u9500 \u9472  tags/                        # optional tag collections\
+\uc0\u9474   \u9500 \u9472  writing.json\
+\uc0\u9474   \u9492 \u9472  tpm.json\
+\uc0\u9500 \u9472  clients/\
+\uc0\u9474   \u9500 \u9472  raycast/                  # Raycast extension (TypeScript)\
+\uc0\u9474   \u9474   \u9500 \u9472  package.json\
+\uc0\u9474   \u9474   \u9500 \u9472  src/index.tsx\
+\uc0\u9474   \u9474   \u9492 \u9472  tsconfig.json\
+\uc0\u9474   \u9500 \u9472  bookmarklet/              # one-file browser picker\
+\uc0\u9474   \u9474   \u9492 \u9472  prompt-picker.js\
+\uc0\u9474   \u9492 \u9472  pages/                    # optional tiny UI hosted on GitHub Pages\
+\uc0\u9474      \u9492 \u9472  index.html\
+\uc0\u9500 \u9472  scripts/\
+\uc0\u9474   \u9500 \u9472  validate.mjs              # validates prompts.json against schema.json\
+\uc0\u9474   \u9492 \u9472  build.mjs                 # (optional) compiles MD to JSON, etc.\
+\uc0\u9492 \u9472  .github/\
+   \uc0\u9492 \u9472  workflows/\
+      \uc0\u9492 \u9472  ci.yml                 # runs validation on PR/push\
+}

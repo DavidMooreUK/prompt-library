@@ -1,0 +1,8 @@
+{
+  "name": "Research",
+  "description": "Prompts for academic research, analysis, and scholarly work",
+  "prompts": [
+    "research-lit-review"
+  ],
+  "related_tags": ["academic", "literature", "analysis", "methodology"]
+}
