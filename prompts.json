@@ -31,6 +31,16 @@
       "prompt": "You are an expert academic researcher. Help me create a literature review structure for: {research_topic}\n\nResearch focus: {focus_area}\nDiscipline: {discipline}\n\nProvide:\n1. Key themes and sub-topics to cover\n2. Methodological approaches to review\n3. Critical analysis framework\n4. Gap identification strategy\n5. Synthesis and conclusion structure\n6. Recommended search terms and databases",
       "variables": ["research_topic", "focus_area", "discipline"],
       "example_usage": "Topic: 'Machine learning in healthcare diagnostics', Focus: 'Image recognition accuracy', Discipline: 'Computer Science'"
+    },
+    {
+      "id": "email-professional",
+      "title": "Professional Email Generator",
+      "description": "Creates professional emails for various business situations",
+      "tags": ["email", "communication", "business", "professional"],
+      "category": "communication",
+      "prompt": "Write a professional email for the following situation: {situation}\n\nRecipient: {recipient}\nContext: {context}\n\nEnsure the email is:\n1. Professional and courteous in tone\n2. Clear and concise\n3. Includes appropriate subject line\n4. Has proper opening and closing\n5. Action-oriented if needed",
+      "variables": ["situation", "recipient", "context"],
+      "example_usage": "Situation: 'Request meeting', Recipient: 'Team manager', Context: 'Discuss project timeline'"
     }
   ]
 }
