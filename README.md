@@ -5,8 +5,8 @@ A curated collection of AI prompts for productivity, creativity, and professiona
 ## Quick Access
 
 - **🌐 Web Interface**: [Browse prompts online](https://davidmooreuk.github.io/prompt-library/)
-- **⚡ Raycast**: Install the extension from `clients/raycast/`
-- **🔖 Bookmarklet**: Add `clients/bookmarklet/prompt-picker.js` to your bookmarks
+- **⚡ Raycast**: Install the extension from `clients/raycast/prompt-library/`
+- **🔖 Bookmarklet**: Copy code from `clients/bookmarklet/prompt-picker.js` and save as bookmark
 
 ## Structure
 
@@ -61,9 +61,28 @@ node scripts/validate.mjs
 # Build and update stats
 node scripts/build.mjs
 
-# Test Raycast extension
-cd clients/raycast && npm install && npm run dev
+# Setup and run Raycast extension
+cd clients/raycast/prompt-library
+npm install && npm run dev
 ```
+
+## Installation Instructions
+
+### Raycast Extension
+1. In Raycast, type "Create Extension" and select it
+2. Choose the directory: `clients/raycast/prompt-library/`
+3. Open terminal in that directory and run:
+   ```bash
+   npm install && npm run dev
+   ```
+4. The extension will appear in Raycast as "Search Prompts"
+
+### Browser Bookmarklet
+1. Copy the JavaScript code from `clients/bookmarklet/prompt-picker.js`
+2. Create a new bookmark in your browser
+3. Paste the code as the bookmark URL
+4. Name it "Prompt Library"
+5. Click the bookmark on any webpage to open the prompt picker
 
 ## Contributing
 
