@@ -1,0 +1,8 @@
+{
+  "name": "Communication",
+  "description": "Prompts for professional writing, email, and workplace messaging",
+  "prompts": [
+    "email-professional"
+  ],
+  "related_tags": ["email", "communication", "business", "professional"]
+}
