@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2025-08-30T00:00:00Z",
+  "updated": "2026-09-05T04:18:00Z",
   "prompts": [
     {
       "id": "writing-blog-outline",
@@ -41,6 +41,16 @@
       "prompt": "Write a professional email for the following situation: {situation}\n\nRecipient: {recipient}\nContext: {context}\n\nEnsure the email is:\n1. Professional and courteous in tone\n2. Clear and concise\n3. Includes appropriate subject line\n4. Has proper opening and closing\n5. Action-oriented if needed",
       "variables": ["situation", "recipient", "context"],
       "example_usage": "Situation: 'Request meeting', Recipient: 'Team manager', Context: 'Discuss project timeline'"
+    },
+    {
+      "id": "macos-finder-comment",
+      "title": "macOS Finder Comment Generator",
+      "description": "Creates a compact Finder Comment for identifying, searching, and distinguishing a file later",
+      "tags": ["macos", "finder", "metadata", "search", "files"],
+      "category": "productivity",
+      "prompt": "Generate a macOS Finder Comment for this file.\n\nFile contents or description:\n{file}\n\nPURPOSE\nThe Finder Comment is a compact semantic description used to identify,\nrediscover, search, and distinguish the file later. It is NOT a conventional\nsummary, filename, note, or list of tags.\n\nOPTIMIZE FOR\n1. Human recognition — someone should understand what the file is without\n   opening it.\n2. Search retrieval — include the specific words someone would reasonably\n   search for months or years later.\n3. Disambiguation — distinguish this file from similar documents.\n4. Factual accuracy — include only information supported by the file.\n\nCONTENT PRIORITY\nInclude, when materially useful:\n\n1. Document type\n   Examples: award letter, invoice, contract, research paper, meeting notes,\n   medical result, receipt, proposal, manual, certificate.\n\n2. Primary subject\n   The person, organization, project, product, property, account, event,\n   topic, or matter the document concerns.\n\n3. Purpose or significance\n   Explain what the document actually does or establishes:\n   confirms, approves, rejects, requests, records, authorizes, summarizes,\n   evidences, proposes, instructs, etc.\n\n4. Important outcome or status\n   Examples: approved, executed, final, submitted, rejected, paid,\n   superseded, accepted.\n\n5. Important date or time period\n   Include dates when they help distinguish or retrieve the document.\n\n6. Identifiers\n   Include meaningful reference numbers, case numbers, invoice numbers,\n   application numbers, agreement numbers, version numbers, etc.\n\n7. Search terminology\n   Preserve important canonical names, acronyms, technical terms, and\n   commonly used alternative terms when useful.\n   Example: Institute of Materials, Minerals and Mining (IOM3);\n   Fellow (FIMMM).\n\nSTYLE\n- Write 1–2 compact sentences.\n- Target approximately 150–300 characters when sufficient.\n- Exceed that only when additional information materially improves retrieval.\n- Use information-dense language.\n- Prefer concrete nouns and verbs.\n- Preserve official names and terminology.\n- Use dates in a consistent human-readable format: 20 Oct 2025.\n- Do not use headings, bullets, Markdown, or labels.\n- Do not write \"This document...\"\n- Do not include filler such as \"contains information about\".\n- Do not simply repeat the filename.\n- Do not stuff unrelated keywords.\n- Do not speculate or infer unsupported facts.\n- Do not describe trivial formatting or file properties.\n- If a fact is uncertain, omit it rather than guess.\n\nSELECTION RULE\nAsk:\n\"If the owner remembers almost nothing about this file two years from now,\nwhat few facts would best help them find it and immediately know why they\nkept it?\"\n\nReturn ONLY the Finder Comment.",
+      "variables": ["file"],
+      "example_usage": "File: 'PDF award letter confirming Fellowship of the Institute of Materials, Minerals and Mining (IOM3 / FIMMM), dated 20 Oct 2025'"
     }
   ]
 }

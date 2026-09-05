@@ -1,0 +1,8 @@
+{
+  "name": "Productivity",
+  "description": "Prompts for personal workflows, file organization, and getting things done",
+  "prompts": [
+    "macos-finder-comment"
+  ],
+  "related_tags": ["macos", "finder", "metadata", "search", "files"]
+}
