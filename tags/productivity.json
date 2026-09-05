@@ -2,7 +2,8 @@
   "name": "Productivity",
   "description": "Prompts for personal workflows, file organization, and getting things done",
   "prompts": [
-    "macos-finder-comment"
+    "macos-finder-comment",
+    "obsidian-knowledge-taxonomy"
   ],
-  "related_tags": ["macos", "finder", "metadata", "search", "files"]
+  "related_tags": ["macos", "finder", "metadata", "search", "files", "obsidian", "pkm", "taxonomy", "knowledge-management", "folders"]
 }

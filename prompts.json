@@ -1,56 +1,115 @@
 {
   "version": "1.0.0",
-  "updated": "2026-09-05T04:18:00Z",
+  "updated": "2026-09-05T14:53:37.863Z",
   "prompts": [
     {
       "id": "writing-blog-outline",
       "title": "Blog Post Outline Generator",
       "description": "Creates structured outlines for blog posts with engaging headlines and logical flow",
-      "tags": ["writing", "content", "blogging"],
+      "tags": [
+        "writing",
+        "content",
+        "blogging"
+      ],
       "category": "writing",
       "prompt": "You are an expert content strategist and writer. Create a comprehensive blog post outline for the topic: {topic}\n\nStructure your outline with:\n1. Compelling headline options (3-5 variations)\n2. Hook/opening that grabs attention\n3. Main sections with subpoints\n4. Key takeaways/conclusion\n5. Call-to-action suggestions\n\nMake it engaging, logical, and optimized for reader retention.",
-      "variables": ["topic"],
+      "variables": [
+        "topic"
+      ],
       "example_usage": "Topic: 'How AI is transforming customer service'"
     },
     {
       "id": "tpm-amazon-behavioral",
       "title": "Amazon Leadership Principles Interview Prep",
       "description": "Helps prepare STAR method responses for Amazon's 16 leadership principles",
-      "tags": ["interview", "tpm", "amazon", "behavioral"],
+      "tags": [
+        "interview",
+        "tpm",
+        "amazon",
+        "behavioral"
+      ],
       "category": "career",
       "prompt": "You are an expert Amazon interview coach. Help me prepare a STAR (Situation, Task, Action, Result) response for the Amazon leadership principle: {principle}\n\nMy background: {background}\nSpecific experience/project: {experience}\n\nProvide:\n1. Key aspects of this leadership principle Amazon values\n2. STAR framework guidance for this principle\n3. Sample strong response structure\n4. Common pitfalls to avoid\n5. Follow-up questions they might ask",
-      "variables": ["principle", "background", "experience"],
+      "variables": [
+        "principle",
+        "background",
+        "experience"
+      ],
       "example_usage": "Principle: 'Customer Obsession', Background: 'Product Manager at SaaS company', Experience: 'Led user research initiative'"
     },
     {
       "id": "research-lit-review",
       "title": "Academic Literature Review Generator",
       "description": "Structures comprehensive literature reviews for academic research",
-      "tags": ["research", "academic", "literature", "analysis"],
+      "tags": [
+        "research",
+        "academic",
+        "literature",
+        "analysis"
+      ],
       "category": "research",
       "prompt": "You are an expert academic researcher. Help me create a literature review structure for: {research_topic}\n\nResearch focus: {focus_area}\nDiscipline: {discipline}\n\nProvide:\n1. Key themes and sub-topics to cover\n2. Methodological approaches to review\n3. Critical analysis framework\n4. Gap identification strategy\n5. Synthesis and conclusion structure\n6. Recommended search terms and databases",
-      "variables": ["research_topic", "focus_area", "discipline"],
+      "variables": [
+        "research_topic",
+        "focus_area",
+        "discipline"
+      ],
       "example_usage": "Topic: 'Machine learning in healthcare diagnostics', Focus: 'Image recognition accuracy', Discipline: 'Computer Science'"
     },
     {
       "id": "email-professional",
       "title": "Professional Email Generator",
       "description": "Creates professional emails for various business situations",
-      "tags": ["email", "communication", "business", "professional"],
+      "tags": [
+        "email",
+        "communication",
+        "business",
+        "professional"
+      ],
       "category": "communication",
       "prompt": "Write a professional email for the following situation: {situation}\n\nRecipient: {recipient}\nContext: {context}\n\nEnsure the email is:\n1. Professional and courteous in tone\n2. Clear and concise\n3. Includes appropriate subject line\n4. Has proper opening and closing\n5. Action-oriented if needed",
-      "variables": ["situation", "recipient", "context"],
+      "variables": [
+        "situation",
+        "recipient",
+        "context"
+      ],
       "example_usage": "Situation: 'Request meeting', Recipient: 'Team manager', Context: 'Discuss project timeline'"
     },
     {
       "id": "macos-finder-comment",
       "title": "macOS Finder Comment Generator",
       "description": "Creates a compact Finder Comment for identifying, searching, and distinguishing a file later",
-      "tags": ["macos", "finder", "metadata", "search", "files"],
+      "tags": [
+        "macos",
+        "finder",
+        "metadata",
+        "search",
+        "files"
+      ],
       "category": "productivity",
       "prompt": "Generate a macOS Finder Comment for this file.\n\nFile contents or description:\n{file}\n\nPURPOSE\nThe Finder Comment is a compact semantic description used to identify,\nrediscover, search, and distinguish the file later. It is NOT a conventional\nsummary, filename, note, or list of tags.\n\nOPTIMIZE FOR\n1. Human recognition — someone should understand what the file is without\n   opening it.\n2. Search retrieval — include the specific words someone would reasonably\n   search for months or years later.\n3. Disambiguation — distinguish this file from similar documents.\n4. Factual accuracy — include only information supported by the file.\n\nCONTENT PRIORITY\nInclude, when materially useful:\n\n1. Document type\n   Examples: award letter, invoice, contract, research paper, meeting notes,\n   medical result, receipt, proposal, manual, certificate.\n\n2. Primary subject\n   The person, organization, project, product, property, account, event,\n   topic, or matter the document concerns.\n\n3. Purpose or significance\n   Explain what the document actually does or establishes:\n   confirms, approves, rejects, requests, records, authorizes, summarizes,\n   evidences, proposes, instructs, etc.\n\n4. Important outcome or status\n   Examples: approved, executed, final, submitted, rejected, paid,\n   superseded, accepted.\n\n5. Important date or time period\n   Include dates when they help distinguish or retrieve the document.\n\n6. Identifiers\n   Include meaningful reference numbers, case numbers, invoice numbers,\n   application numbers, agreement numbers, version numbers, etc.\n\n7. Search terminology\n   Preserve important canonical names, acronyms, technical terms, and\n   commonly used alternative terms when useful.\n   Example: Institute of Materials, Minerals and Mining (IOM3);\n   Fellow (FIMMM).\n\nSTYLE\n- Write 1–2 compact sentences.\n- Target approximately 150–300 characters when sufficient.\n- Exceed that only when additional information materially improves retrieval.\n- Use information-dense language.\n- Prefer concrete nouns and verbs.\n- Preserve official names and terminology.\n- Use dates in a consistent human-readable format: 20 Oct 2025.\n- Do not use headings, bullets, Markdown, or labels.\n- Do not write \"This document...\"\n- Do not include filler such as \"contains information about\".\n- Do not simply repeat the filename.\n- Do not stuff unrelated keywords.\n- Do not speculate or infer unsupported facts.\n- Do not describe trivial formatting or file properties.\n- If a fact is uncertain, omit it rather than guess.\n\nSELECTION RULE\nAsk:\n\"If the owner remembers almost nothing about this file two years from now,\nwhat few facts would best help them find it and immediately know why they\nkept it?\"\n\nReturn ONLY the Finder Comment.",
-      "variables": ["file"],
+      "variables": [
+        "file"
+      ],
       "example_usage": "File: 'PDF award letter confirming Fellowship of the Institute of Materials, Minerals and Mining (IOM3 / FIMMM), dated 20 Oct 2025'"
+    },
+    {
+      "id": "obsidian-knowledge-taxonomy",
+      "title": "Obsidian 04 Knowledge Taxonomy Designer",
+      "description": "Recommends a small set of durable top-level folders for Obsidian 04 Knowledge based on 03 Areas contents",
+      "tags": [
+        "obsidian",
+        "pkm",
+        "taxonomy",
+        "knowledge-management",
+        "folders"
+      ],
+      "category": "productivity",
+      "prompt": "You are designing the top-level folder taxonomy for an Obsidian vault.\n\nYour task is to analyze the contents of `03 Areas` and recommend a small set of durable, high-level folders for `04 Knowledge`.\n\nContents of `03 Areas`:\n{areas}\n\n## Core model\n\n`03 Areas` represents ongoing responsibilities, operating domains, and MOCs.\n\n`04 Knowledge` represents durable, reusable knowledge that may support multiple Areas and Projects.\n\nDo NOT create a 1:1 mapping between Areas and Knowledge folders.\n\nFor example:\n\n* `Career` may be an Area, but should not automatically create `04 Knowledge/Career`.\n* Knowledge referenced by Career may instead belong under domains such as `AI`, `Leadership`, `Program Management`, `Engineering`, or `Digital Transformation`.\n\n## Primary objective\n\nCreate the smallest useful set of top-level Knowledge folders that can organize the durable knowledge implied by the Areas.\n\nThe taxonomy should optimize for:\n\n1. Long-term stability\n2. Low cognitive load\n3. Cross-area reuse\n4. Broad conceptual coherence\n5. Minimal folder proliferation\n6. Easy filing without having to think too hard\n\n## Anti-granularity rules\n\nBe strongly biased toward FEWER folders.\n\nDo not create a folder merely because:\n\n* an Area exists with that name\n* multiple notes mention a topic\n* a project exists\n* a specific technology, vendor, product, methodology, or tool appears\n* something could theoretically be separated\n\nPrefer one broad domain over several adjacent categories.\n\nFor example, prefer:\n\n`AI/`\n\nover:\n\n`Agentic AI/`\n`LLMs/`\n`RAG/`\n`Machine Learning/`\n`AI Agents/`\n\nThose subjects can live as notes, MOCs, links, or substructure inside `AI`.\n\nPrefer:\n\n`Engineering/`\n\nover:\n\n`Well Engineering/`\n`Mechanical Engineering/`\n`Aerospace Engineering/`\n`Reliability Engineering/`\n\nunless the underlying corpus is large enough that the broader category would become genuinely difficult to navigate.\n\n## Threshold for creating a top-level folder\n\nA proposed top-level Knowledge folder should normally satisfy at least THREE of these conditions:\n\n* It contains knowledge relevant to multiple Areas or Projects.\n* It represents a durable field or discipline.\n* It is likely to remain relevant for several years.\n* It could reasonably contain at least 10–20 substantive knowledge notes over time.\n* It has a clear conceptual boundary from the other proposed folders.\n* A user could reliably decide whether a new note belongs there without hesitation.\n\nIf it does not meet this threshold, keep it as:\n\n* a note,\n* an MOC,\n* a tag,\n* a property,\n* or a subtopic inside a broader Knowledge folder.\n\n## Folder-count constraint\n\nTarget **5–9 top-level folders** in `04 Knowledge`.\n\nUse fewer if possible.\n\nExceed 9 only if there is unusually strong evidence that the domains are genuinely distinct and durable.\n\n## Analysis method\n\n1. Read all notes and folder names in the provided `03 Areas` contents.\n2. Ignore purely administrative or operational language.\n3. Extract the underlying reusable knowledge domains.\n4. Merge overlapping or closely related domains aggressively.\n5. Separate:\n\n   * responsibilities\n   * active work\n   * durable knowledge\n6. Identify knowledge that appears across multiple Areas.\n7. Propose a compact taxonomy.\n\n## Required output\n\n### 1. Recommended `04 Knowledge` structure\n\nShow only the proposed top-level folders:\n\n```text\n04 Knowledge/\n  AI/\n  Engineering/\n  Leadership/\n  ...\n```\n\n### 2. Rationale\n\nFor each folder, explain in one or two sentences:\n\n* what belongs there\n* what explicitly does NOT need its own top-level folder\n\n### 3. Area-to-Knowledge mapping\n\nCreate a table:\n\n| 03 Area          | Relevant 04 Knowledge domains      |\n| ---------------- | ---------------------------------- |\n| Career           | AI, Leadership, Program Management |\n| Finance          | Finance                            |\n| Personal Systems | AI, Productivity, Technology       |\n\nThis mapping is many-to-many.\n\n### 4. Granularity check\n\nList any categories you considered but deliberately rejected as top-level folders and explain what broader category should absorb them.\n\nExample:\n\n* `Agentic AI` → keep under `AI`\n* `Vendor Strategy` → keep under `Digital Transformation` or `Management`\n* `Obsidian` → keep under `Personal Knowledge Management` or `Technology`, depending on corpus\n\n### 5. Taxonomy quality test\n\nAssess the final taxonomy against these questions:\n\n* Are any folders really Areas disguised as Knowledge?\n* Are any folders named after a single project, vendor, application, or technology?\n* Are any two folders likely to cause filing ambiguity?\n* Could any two folders be merged?\n* Would this structure still make sense five years from now?\n* Is any folder unlikely ever to contain 10+ meaningful notes?\n\nIf yes, revise the taxonomy before presenting the final result.\n\n## Important design principle\n\nThe purpose of folders is coarse structural separation.\n\nDo not attempt to encode the full meaning of the vault into folders.\n\nUse:\n\n* links\n* MOCs\n* properties\n* tags\n* search\n\nfor finer-grained organization.\n\nThe final result should feel deliberately broad and slightly under-specified rather than exhaustively categorized.",
+      "variables": [
+        "areas"
+      ],
+      "example_usage": "Areas: 'Career (AI, interviews, leadership MOCs); Finance (budgeting, investing notes); Personal Systems (Obsidian workflows, productivity)'"
     }
   ]
 }
